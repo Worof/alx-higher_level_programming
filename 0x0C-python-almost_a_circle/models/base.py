@@ -1,24 +1,31 @@
 #!/usr/bin/python3
 """
-Unit test for the Base class from models.base
+This module contains the Base class.
+The Base class will serve as the foundation for all other classes in this project.
+It manages the id attribute in all future classes and avoids duplicating code.
 """
 
-import unittest
-from models.base import Base
+class Base:
+    """A base class for future models."""
+    __nb_objects = 0
 
-class TestBase(unittest.TestCase):
-    """
-    Defines Test Cases for the Base class from models.base
-    """
+    def __init__(self, id=None):
+        """Initialize a new Base instance."""
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
 
-    def test_id_assignment(self):
-        """
-        Test case for id assignment in Base class
-        """
-        obj1 = Base()
-        obj2 = Base(12)
-        self.assertIsNone(obj1.id)
-        self.assertEqual(obj2.id, 12)
-
-if __name__ == '__main__':
-    unittest.main()
+# For testing purposes, the code below can be in a separate file, like 0-main.py
+# if __name__ == "__main__":
+#     b1 = Base()
+#     print(b1.id)
+#     b2 = Base()
+#     print(b2.id)
+#     b3 = Base()
+#     print(b3.id)
+#     b4 = Base(12)
+#     print(b4.id)
+#     b5 = Base()
+#     print(b5.id)
