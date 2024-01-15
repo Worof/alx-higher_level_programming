@@ -22,6 +22,13 @@ class Rectangle(Base):
     def __str__(self):
         """Return the string representation of the Rectangle."""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+    def update(self, *args):
+        """Update the Rectangle attributes."""
+        if len(args) > 0:
+            attribute_names = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                if i < len(attribute_names):
+                    setattr(self, attribute_names[i], arg)
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
