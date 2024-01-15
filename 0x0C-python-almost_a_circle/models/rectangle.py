@@ -9,6 +9,9 @@ class Rectangle(Base):
     """
     Rectangle class that inherits from Base.
     """
+    def area(self):
+        """Return the area of the Rectangle."""
+        return self.width * self.height
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
