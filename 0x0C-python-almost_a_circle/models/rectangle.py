@@ -13,6 +13,9 @@ class Rectangle(Base):
         """Return the area of the Rectangle."""
         return self.width * self.height
     def display(self):
+        """Print the Rectangle instance with the character # taking care of x and y."""
+        # Print the 'y' number of newline characters to move down
+        print("\n" * self.y, end="")
         """Print the Rectangle instance with the character #."""
         for _ in range(self.height):
             print("#" * self.width)
