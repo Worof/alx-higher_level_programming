@@ -37,6 +37,14 @@ class Square(Rectangle):
                         self.size = value  # size is treated specially
                     else:
                         setattr(self, key, value)
+    def to_dictionary(self):
+        """Return the dictionary representation of a Square."""
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
 
     @property
     def size(self):
