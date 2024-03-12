@@ -1,11 +1,17 @@
 #!/usr/bin/node
 
-const lines = [
-    "C is fun",
-    "Python is cool",
-    "JavaScript is amazing"
+const phrases = [
+  'C is fun',
+  'Python is cool',
+  'JavaScript is amazing'
 ];
 
-for (const line of lines) {
-    console.log(line);
+let output = '';
+for (let i = 0; i < phrases.length; i++) {
+  output += phrases[i];
+  if (i < phrases.length - 1) {
+    output += '\n';
+  }
 }
+
+console.log(output);
