@@ -1,12 +1,11 @@
 #!/usr/bin/node
 
-const argCount = process.argv.length;
+let args = process.argv.slice(2); // Remove the first two elements
 
-if (argCount === 2) {
-    console.log("No argument");
-
-} else if (argCount === 3) {
-    console.log("Argument found");
+if (args.length === 0) {
+    console.log('No argument');
+} else if (args.length === 1) {
+    console.log('Argument found');
 } else {
-    console.log("Arguments found")
+    console.log('Arguments found');
 }
